@@ -1,0 +1,158 @@
+<devicedata>
+	<manufacturer>Berto Ltd</manufacturer>
+	<creator>David Massot</creator>
+	<name>Berto Assist</name>
+	<version>1</version>
+	<small image_source="c4z">icons/device_sm.png</small>
+	<large image_source="c4z">icons/device_lg.png</large>
+	<control>lua_gen</control>
+	<controlmethod>other</controlmethod>
+	<driver>DriverWorks</driver>
+	<copyright>Copyright 2004-2017 Berto Ltd.  All rights reserved.</copyright>
+	<created>13/12/2018 8:49 PM</created>
+	<modified>13/12/2018 8:50 PM</modified>
+    <proxy proxybindingid="5000" name="Berto Assist" primary="True" image_source="c4z" large_image="icons/device_lg.png" small_image="icons/device_sm.png">Berto_Assist</proxy>
+	<berto>
+		<service>0</service>
+		<subscription>1</subscription>
+	</berto>
+	<config>
+		<script file="squish.lua" encryption="2" />
+		<documentation file = "README.html">https://berto.io</documentation>
+		<properties>
+			<property>
+				<name>Assist Token</name>
+				<type>STRING</type>
+				<readonly>true</readonly>
+				<default />
+			</property>
+			<property>
+				<name>Assist Devices</name>
+				<type>DEVICE_SELECTOR</type>
+				<readonly>false</readonly>
+				<default />
+				<multiselect>true</multiselect>
+				<items>
+					<item>light.c4i</item>
+					<item>light_v2.c4i</item>
+					<item>relaysingle_drivewayheater_c4.c4i</item>
+					<item>relaysingle_fountain_c4.c4i</item>
+					<item>relaysingle_gasfireplace_c4.c4i</item>
+					<item>relaysingle_gasfireplaceswitch_c4.c4i</item>
+					<item>relaysingle_pump_c4.c4i</item>
+					<item>relaysingle_radiantfloor_c4.c4i</item>
+					<item>relaysingle_fan_c4.c4i</item>
+					<item>relaysingle_doorlock_c4.c4i</item>
+					<item>relaysingle_door_c4.c4i</item>
+					<item>relaysingle_drapes_c4.c4i</item>
+					<item>relaysingle_electronicgate_c4.c4i</item>
+					<item>relaysingle_garagedoor_c4.c4i</item>
+					<item>relaysingle_motorizedlift_c4.c4i</item>
+					<item>relaysingle_motorizedscreen_c4.c4i</item>
+					<item>relaysingle_relay_c4.c4i</item>
+					<item>relaysingle_sprinklers_c4.c4i</item>
+					<item>blind.c4i</item>
+					<item>contactsingle_carbonmonoxidedetector_c4.c4i</item>
+					<item>contactsingle_contactswitch_c4.c4i</item>
+					<item>contactsingle_doorbell_c4.c4i</item>
+					<item>contactsingle_doorcontactsensor_c4.c4i</item>
+					<item>contactsingle_drivewaysensor_c4.c4i</item>
+					<item>contactsingle_garagedoorsensor_c4.c4i</item>
+					<item>contactsingle_gate_c4.c4i</item>
+					<item>contactsingle_glassbreakdetector_c4.c4i</item>
+					<item>contactsingle_heatdetector_c4.c4i</item>
+					<item>contactsingle_humiditysensor_c4.c4i</item>
+					<item>contactsingle_irbeam_c4.c4i</item>
+					<item>contactsingle_motionsensor.c4i</item>
+					<item>contactsingle_motionsensor_c4.c4i</item>
+					<item>contactsingle_pressuresensor_c4.c4i</item>
+					<item>contactsingle_smokedetector_c4.c4i</item>
+					<item>contactsingle_watersensor_c4.c4i</item>
+					<item>contactsingle_windowcontactsensor_c4.c4i</item>
+					<item>relaycontact_electronicgate_c4.c4i</item>
+					<item>relaycontact_garagedoor_c4.c4i</item>
+					<item>uibutton.c4i</item>
+				</items>
+			</property>
+			<property>
+				<name>Add Room Watch Devices</name>
+				<type>LIST</type>
+				<readonly>false</readonly>
+				<default>No</default>
+				<items>
+					<item>Yes</item>
+					<item>No</item>
+				</items>
+			</property>
+			<property>
+				<name>Add Room Listen Devices</name>
+				<type>LIST</type>
+				<readonly>false</readonly>
+				<default>No</default>
+				<items>
+					<item>Yes</item>
+					<item>No</item>
+				</items>
+			</property>
+			<property>
+				<name>Driver Managament</name>
+				<type>LABEL</type>
+				<default>Driver Management</default>
+			</property>
+			<property>
+				<name>Version</name>
+				<type>STRING</type>
+				<readonly>true</readonly>
+				<default />
+			</property>
+			<property>
+				<name>Auto Update</name>
+				<type>LIST</type>
+				<readonly>false</readonly>
+				<default>Off</default>
+				<items>
+					<item>On</item>
+					<item>Off</item>
+					<item>Force</item>
+				</items>
+			</property>
+			<property>
+				<name>Debug Mode</name>
+				<type>LIST</type>
+				<readonly>false</readonly>
+				<default>Off</default>
+				<items>
+					<item>On</item>
+					<item>Off</item>
+				</items>
+			</property>
+		</properties>
+		<actions>
+			<action>
+				<name>Sync System</name>
+				<command>SYNC_SYSTEM</command>
+			</action>
+			<action>
+				<name>Link System</name>
+				<command>LINK_SYSTEM</command>
+			</action>
+		</actions>
+	</config>
+    <connections>
+		<connection>
+			<id>5000</id>
+			<connectionname>Berto_Assist</connectionname>
+			<facing>6</facing>
+			<type>2</type>
+			<consumer>false</consumer>
+			<audiosource>false</audiosource>
+			<videosource>false</videosource>
+			<linelevel>false</linelevel>
+			<classes>
+				<class>
+					<classname>Berto_Assist</classname>
+				</class>
+			</classes>
+		</connection>
+	</connections>
+</devicedata>

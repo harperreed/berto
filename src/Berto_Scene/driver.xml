@@ -1,0 +1,187 @@
+<devicedata>
+	<manufacturer>Berto Ltd</manufacturer>
+	<creator>David Massot</creator>
+	<name>Berto Scene</name>
+	<version>1</version>
+	<small image_source="c4z">icons/device_sm.png</small>
+	<large image_source="c4z">icons/device_lg.png</large>
+	<control>lua_gen</control>
+	<controlmethod>other</controlmethod>
+	<driver>DriverWorks</driver>
+	<copyright>Copyright 2004-2017 Berto Ltd.  All rights reserved.</copyright>
+	<created>13/12/2018 8:49 PM</created>
+	<modified>13/12/2018 8:50 PM</modified>
+    <proxy proxybindingid="5000" name="Berto Scene" primary="True" image_source="c4z" large_image="icons/device_lg.png" small_image="icons/device_sm.png">uibutton</proxy>
+	<berto>
+		<service>0</service>
+		<subscription>0</subscription>
+	</berto>
+	<config>
+		<script file="squish.lua" encryption="2" />
+		<documentation file = "README.html">https://berto.io</documentation>
+		<properties>
+			<property>
+				<name>Room Control Device</name>
+				<type>DEVICE_SELECTOR</type>
+				<readonly>false</readonly>
+				<default />
+				<multiselect>false</multiselect>
+				<items>
+					<item>room_control_keypad.c4z</item>
+				</items>
+			</property>
+			<property>
+				<name>Preset</name>
+				<type>LIST</type>
+				<readonly>false</readonly>
+				<default />
+				<multiselect>false</multiselect>
+				<items>
+					<item>1</item>
+					<item>2</item>
+					<item>3</item>
+					<item>4</item>
+					<item>5</item>
+				</items>
+			</property>
+			<property>
+				<name>Scene Devices</name>
+				<type>DEVICE_SELECTOR</type>
+				<readonly>false</readonly>
+				<default />
+				<multiselect>true</multiselect>
+				<items>
+					<item>light.c4i</item>
+					<item>light_v2.c4i</item>
+					<item>relaysingle_drivewayheater_c4.c4i</item>
+					<item>relaysingle_fountain_c4.c4i</item>
+					<item>relaysingle_gasfireplace_c4.c4i</item>
+					<item>relaysingle_gasfireplaceswitch_c4.c4i</item>
+					<item>relaysingle_pump_c4.c4i</item>
+					<item>relaysingle_radiantfloor_c4.c4i</item>
+					<item>relaysingle_fan_c4.c4i</item>
+					<item>relaysingle_doorlock_c4.c4i</item>
+					<item>relaysingle_door_c4.c4i</item>
+					<item>relaysingle_drapes_c4.c4i</item>
+					<item>relaysingle_electronicgate_c4.c4i</item>
+					<item>relaysingle_garagedoor_c4.c4i</item>
+					<item>relaysingle_motorizedlift_c4.c4i</item>
+					<item>relaysingle_motorizedscreen_c4.c4i</item>
+					<item>relaysingle_relay_c4.c4i</item>
+					<item>relaysingle_sprinklers_c4.c4i</item>
+					<item>blind.c4i</item>
+					<item>relaycontact_electronicgate_c4.c4i</item>
+					<item>relaycontact_garagedoor_c4.c4i</item>
+					<item>experience-button-scenario.c4z</item>
+				</items>
+			</property>
+			<property>
+				<name>Invert Scene Devices</name>
+				<type>DEVICE_SELECTOR</type>
+				<readonly>false</readonly>
+				<default />
+				<multiselect>true</multiselect>
+				<items>
+					<item>light.c4i</item>
+					<item>light_v2.c4i</item>
+					<item>relaysingle_drivewayheater_c4.c4i</item>
+					<item>relaysingle_fountain_c4.c4i</item>
+					<item>relaysingle_gasfireplace_c4.c4i</item>
+					<item>relaysingle_gasfireplaceswitch_c4.c4i</item>
+					<item>relaysingle_pump_c4.c4i</item>
+					<item>relaysingle_radiantfloor_c4.c4i</item>
+					<item>relaysingle_fan_c4.c4i</item>
+					<item>relaysingle_doorlock_c4.c4i</item>
+					<item>relaysingle_door_c4.c4i</item>
+					<item>relaysingle_drapes_c4.c4i</item>
+					<item>relaysingle_electronicgate_c4.c4i</item>
+					<item>relaysingle_garagedoor_c4.c4i</item>
+					<item>relaysingle_motorizedlift_c4.c4i</item>
+					<item>relaysingle_motorizedscreen_c4.c4i</item>
+					<item>relaysingle_relay_c4.c4i</item>
+					<item>relaysingle_sprinklers_c4.c4i</item>
+					<item>blind.c4i</item>
+					<item>relaycontact_electronicgate_c4.c4i</item>
+					<item>relaycontact_garagedoor_c4.c4i</item>
+					<item>experience-button-scenario.c4z</item>
+				</items>
+			</property>
+			<property>
+				<name>Driver Managament</name>
+				<type>LABEL</type>
+				<default>Driver Management</default>
+			</property>
+			<property>
+				<name>Version</name>
+				<type>STRING</type>
+				<readonly>true</readonly>
+				<default />
+			</property>
+			<property>
+				<name>Auto Update</name>
+				<type>LIST</type>
+				<readonly>false</readonly>
+				<default>Off</default>
+				<items>
+					<item>On</item>
+					<item>Off</item>
+					<item>Force</item>
+				</items>
+			</property>
+			<property>
+				<name>Debug Mode</name>
+				<type>LIST</type>
+				<readonly>false</readonly>
+				<default>Off</default>
+				<items>
+					<item>On</item>
+					<item>Off</item>
+				</items>
+			</property>
+		</properties>
+		<commands>
+			<command>
+				<name>ON</name>
+				<description>Turn Scene On</description>
+			</command>
+			<command>
+				<name>OFF</name>
+				<description>Turn Scene Off</description>
+			</command>
+			<command>
+				<name>TOGGLE</name>
+				<description>Toggle Scene</description>
+			</command>
+		</commands>
+	</config>
+	<connections>
+		<connection>
+			<id>5000</id>
+			<facing>6</facing>
+			<connectionname>UIBUTTON</connectionname>
+			<type>2</type>
+			<consumer>False</consumer>
+			<audiosource>True</audiosource>
+			<videosource>True</videosource>
+			<linelevel>True</linelevel>
+			<classes>
+				<class>
+					<classname>UIBUTTON</classname>
+				</class>
+			</classes>
+		</connection>
+	</connections>
+	<capabilities>
+		<navigator_display_option proxybindingid="5000">
+			<display_icons>
+				<Icon height="140" width="140">controller://driver/Berto_Scene/icons/device/experience_off.png</Icon>
+				<state id="On">
+					<Icon height="140" width="140">controller://driver/Berto_Scene/icons/device/experience_on.png</Icon>
+				</state>
+				<state id="Off">
+					<Icon height="140" width="140">controller://driver/Berto_Scene/icons/device/experience_off.png</Icon>
+				</state>
+			</display_icons>
+		</navigator_display_option>
+	</capabilities>
+</devicedata>
